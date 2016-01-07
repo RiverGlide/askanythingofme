@@ -1,0 +1,3 @@
+require "askanythingofme"
+
+run AskAnythingOfMe
