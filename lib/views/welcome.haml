@@ -5,11 +5,13 @@
   %p -Maimonides
 
 #ask-the-question
-  .hint 1. Type your friend's question here
   %form
-    %input{name: "question", type: "text"}
-    %input{value: "Go", type: "submit"}
-  .hint 2. Click the Go button
+    .interaction
+      .hint 1. Type your friend's question:
+      %input{name: "question", type: "text"}
+    .interaction
+      .hint 2. Click the button:
+      %input{value: "Go", type: "submit"} 
 
 #the-answer
   .hint 3. Copy the link and send to your friend:
