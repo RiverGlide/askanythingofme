@@ -1,21 +1,43 @@
+:javascript
+  /*
+  From the plaintext, we need to understand:
+    the initial state
+    the transition (with any examples), this is the bit that goes in the manual
+    the end state
+    any assertions that we want to make on the end state (assume that the pre-state has already been checked)
+
+  Get your google link
+    Ask the question (e.g. "what is recursion")
+      Enter "what is recursion" into the question field
+      Click the Go button
+    Get your google link
+      You now have a google link that performs the search "what is recursion"
+  */
+
+
 %h1 Welcome
 %p Sometimes 'friends' ask the dumbest questions that, quite frankly, they could have just googled. But, oh no, they have to text you or email you or worse, phone you. Guide them to a more righteous path so they learn to be self-sufficient!
 %blockquote
   .quote Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.
   .by Maimonides
 
-#ask-the-question
+.task#ask-the-question
   %form
-    .interaction
-      .hint 1. Type your friend's question:
+    .interaction.enter-text#question
       %input{name: "question", type: "text", value: question}
-    .interaction
-      .hint 2. Click the button:
-      %input{value: "Go", type: "submit"} 
+      .hint
+        Enter
+        %i= question
+        into the question field
+    .interaction.click#go
+      %input{value: "Go", type: "submit"}
+      .hint Click the button
 
 - unless question.nil?
-  #the-answer
+  .task#get-your-google-link
     .interaction
-      .hint 3. Copy the link and send to your friend:
+      .hint
+        You now have a google link that performs the search
+        %i= question
       %p
         %a{href: question_url}= question_url
