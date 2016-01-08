@@ -1,19 +1,21 @@
 %h1 Welcome
 %p Sometimes 'friends' ask the dumbest questions that, quite frankly, they could have just googled. But, oh no, they have to text you or email you or worse, phone you. Guide them to a more righteous path so they learn to be self-sufficient!
 %blockquote
-  %p Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.
-  %p -Maimonides
+  .quote Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.
+  .by Maimonides
 
 #ask-the-question
   %form
     .interaction
       .hint 1. Type your friend's question:
-      %input{name: "question", type: "text"}
+      %input{name: "question", type: "text", value: question}
     .interaction
       .hint 2. Click the button:
       %input{value: "Go", type: "submit"} 
 
-#the-answer
-  .hint 3. Copy the link and send to your friend:
-  %p
-    %a{href: question_url}= question_url
+- unless question.nil?
+  #the-answer
+    .interaction
+      .hint 3. Copy the link and send to your friend:
+      %p
+        %a{href: question_url}= question_url

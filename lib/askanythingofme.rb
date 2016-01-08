@@ -3,6 +3,9 @@ require "haml"
 
 class AskAnythingOfMe < Sinatra::Base
   get '/' do
-    haml :welcome, locals: {question_url: "https://google.com/search?q=#{params["question"]}"}
+    haml :welcome, locals: {
+      question_url: "https://google.com/search?q=#{params["question"]}",
+      question: params["question"]
+    }
   end
 end
