@@ -9,7 +9,7 @@
         Get a google link
           You now have a google link that performs the search "what is recursion"
 
-    See why the question you've asked is one we can't help you with:
+    See why we can't help you with the question you've asked:
       With Javascript
         Ask a question we can't help you with (e.g. the question is blank)
           Enter the question into the question field
@@ -21,7 +21,7 @@
           Enter the question into the question field
           Click the Go Button
         Receive feedback
-          You should have feedback about the question 
+          You should see feedback about why we can't answer the question
           (e.g. the feedback says "Please enter a question into the question field")
   */
   var example_questions = [
@@ -29,8 +29,8 @@
     [ "what is recursion", "https://google.com/search?q=what+is+recursion" ]
   ];
   var bad_questions = [
-    [ "QUESTION", "FEEDBACK"                              ],
-    [ "",         "Please enter a question into the question field" ]
+    [ "QUESTION", "HINT"                                                                          ],
+    [ "",         ["Enter your friend's question into the question field", "Click the Go Button" ]]
   ];
 
 %h1 Google Fish
@@ -51,7 +51,7 @@
           Enter a new question to get a new link
     .interaction.click#go
       %input{value: "Go", type: "submit"}
-      .hint Click the button
+      .hint Click the Go button
 
 - unless question.nil?
   .task#get-your-google-link
